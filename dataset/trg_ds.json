@@ -1,0 +1,29 @@
+{
+	"name": "trg_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureFileStorage1",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"trgfs": {
+					"value": "@dataset().trgfs",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"trgfs": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.trgmedia"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

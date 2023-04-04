@@ -1,0 +1,62 @@
+{
+	"name": "fs-copy-pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "fs-copy",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureFileStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureFileStorageWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "fs_ds",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "trg_ds",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"srcmedia": {
+				"type": "string"
+			},
+			"trgmedia": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-04-03T08:39:41Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

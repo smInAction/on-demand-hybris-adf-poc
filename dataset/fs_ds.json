@@ -1,0 +1,29 @@
+{
+	"name": "fs_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "fs_ls",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"fsname": {
+					"value": "@dataset().srcfs",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"srcfs": {
+				"type": "string",
+				"defaultValue": "@pipeline().parameters.srcmedia"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureFileStorageLocation"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
