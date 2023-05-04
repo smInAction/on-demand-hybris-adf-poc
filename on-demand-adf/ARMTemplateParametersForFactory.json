@@ -8,8 +8,14 @@
 		"AzureFileStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
 		"fs_ls_connectionString": {
 			"value": ""
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": "https://fn-app-clenup-media.azurewebsites.net"
 		}
 	}
 }
